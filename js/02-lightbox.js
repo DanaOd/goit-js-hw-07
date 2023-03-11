@@ -3,10 +3,6 @@ import { galleryItems } from './gallery-items.js';
 
 console.log(galleryItems);
 
-// Создание и рендер разметки по массиву данных galleryItems и предоставленному шаблону элемента галереи. 
-// Используй готовый код из первого задания.
-
-
 const galleryRef = document.querySelector(".gallery");
 
 const markUp = galleryItems
@@ -25,24 +21,11 @@ galleryRef.addEventListener("click", onGalleryClickHandler);
 
 function onGalleryClickHandler(event) {
     event.preventDefault();  
-    // console.log("click on", event.target.nodeName);
-
+    
     if (event.target.nodeName !== "IMG") {
         return;
     }
     
-    const lightbox = new SimpleLightbox('.gallery a', { captions:true, captionsData: "alt"});
-    console.log("lightbox");
-    // const imageLink = event.target.parentNode.href;
-    // console.log("click, imageLink", imageLink);
-  
-
-
-  
+    console.log(event.target);
+    const lightbox = new SimpleLightbox('.gallery a', { captions:true, captionsData: "alt", captionDelay: 250});
   }
-
-// Инициализация библиотеки после того как элементы галереи созданы и добавлены в div.gallery. Для этого ознакомься 
-// с документацией SimpleLightbox - в первую очередь секции «Usage» и «Markup».
-
-// Посмотри в документации секцию «Options» и добавь отображение подписей к изображениям из атрибута alt. 
-// Пусть подпись будет снизу и появляется через 250 миллисекунд после открытия изображения.
