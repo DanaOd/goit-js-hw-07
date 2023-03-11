@@ -48,9 +48,9 @@ function onGalleryClickHandler(event) {
   const instance = basicLightbox.create(
     `<img src="${bigImageLink}" width="800" height="600">`
   );
-  
   instance.show();
 
+  
   if (instance.visible()){
     console.log('modal is opened');
 
