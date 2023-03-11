@@ -48,7 +48,23 @@ function onGalleryClickHandler(event) {
   const instance = basicLightbox.create(
     `<img src="${bigImageLink}" width="800" height="600">`
   );
-  return instance.show();
+  
+  instance.show();
+
+  if (instance.visible()){
+    console.log('modal is opened');
+
+    //Добавь закрытие модального окна по нажатию клавиши Escape
+    document.addEventListener('keydown', onKeyEscHandler);
+  }
+  
+  function onKeyEscHandler (event) {
+    console.log(event.key);
+    if (event.key === 'Escape'){
+        instance.close();
+    }
+}
+
 }
 
 
