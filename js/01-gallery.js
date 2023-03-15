@@ -28,13 +28,6 @@ galleryRef.addEventListener("click", onGalleryClickHandler);
 
 
 
-// Подключение скрипта и стилей библиотеки модального окна basicLightbox. Используй CDN сервис jsdelivr и добавь в проект
-//  ссылки на минифицированные (.min) файлы библиотеки.
-
-// Открытие модального окна по клику на элементе галереи. Для этого ознакомься с документацией и примерами.
-
-// Замена значения атрибута src элемента <img> в модальном окне перед открытием. Используй готовую разметку модального окна
-// с изображением из примеров библиотеки basicLightbox.
 function onGalleryClickHandler(event) {
   event.preventDefault();
 
@@ -62,6 +55,7 @@ function onGalleryClickHandler(event) {
     console.log(event.key);
     if (event.key === 'Escape'){
         instance.close();
+        document.removeEventListener('keydown', onKeyEscHandler);
     }
 }
 

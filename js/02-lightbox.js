@@ -26,6 +26,6 @@ function onGalleryClickHandler(event) {
         return;
     }
     
-    console.log(event.target);
+    // console.log(event.target);
     const lightbox = new SimpleLightbox('.gallery a', { captions:true, captionsData: "alt", captionDelay: 250});
   }
