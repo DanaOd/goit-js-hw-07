@@ -17,6 +17,7 @@ galleryRef.insertAdjacentHTML("afterbegin", markUp);
 
 galleryRef.addEventListener("click", onGalleryClickHandler);
 
+const lightbox = new SimpleLightbox('.gallery a', { captions:true, captionsData: "alt", captionDelay: 250});
 
 
 function onGalleryClickHandler(event) {
@@ -25,7 +26,6 @@ function onGalleryClickHandler(event) {
     if (event.target.nodeName !== "IMG") {
         return;
     }
-    
-    // console.log(event.target);
-    const lightbox = new SimpleLightbox('.gallery a', { captions:true, captionsData: "alt", captionDelay: 250});
+    lightbox.open(event.target);
   }
+  
